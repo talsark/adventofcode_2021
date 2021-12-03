@@ -7,4 +7,15 @@ for x in range(1, len(data)):
     if data[x] > data[x-1]:
         increased = increased + 1
         
-print(increased)
+print(f"Part 1: {increased}")
+
+numsum = []
+for x in range(2, len(data)):
+    numsum.append(data[x] + data[x-1] + data[x-2])
+
+increased_new = 0
+for x in range(1, len(numsum)):
+    if numsum[x] > numsum[x-1]:
+        increased_new = increased_new + 1
+
+print(f"Part 2: {increased_new}")
